@@ -1,0 +1,43 @@
+Package: opencv2
+Version: 2.4.13.7
+Port-Version: 19
+Depends: vcpkg-cmake, vcpkg-cmake-config, vcpkg-get-python-packages, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: a45aae238c0ca3e1ec5a794c6838a8066bb4f04d61ffe4ad9c8fc9c5e9110008
+Description: Open Source Computer Vision Library
+Default-Features: default-features
+
+Package: opencv2
+Feature: default-features
+Architecture: x64-windows
+Multi-Arch: same
+Description: Platform-dependent default features
+
+Package: opencv2
+Feature: eigen
+Depends: eigen3
+Architecture: x64-windows
+Multi-Arch: same
+Description: Eigen support for opencv
+
+Package: opencv2
+Feature: jpeg
+Depends: libjpeg-turbo
+Architecture: x64-windows
+Multi-Arch: same
+Description: JPEG support for opencv
+
+Package: opencv2
+Feature: png
+Depends: libpng
+Architecture: x64-windows
+Multi-Arch: same
+Description: PNG support for opencv
+
+Package: opencv2
+Feature: tiff
+Depends: tiff
+Architecture: x64-windows
+Multi-Arch: same
+Description: TIFF support for opencv

@@ -1,0 +1,9 @@
+libdir=D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/flatbuffers_x64-windows/lib
+includedir=D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/flatbuffers_x64-windows/include
+
+Name: FlatBuffers
+Description: Memory Efficient Serialization Library
+Version: 23.5.26
+
+Libs: -L${libdir} -lflatbuffers
+Cflags: -I${includedir}

@@ -1,0 +1,12 @@
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/lib/turbojpeg.lib
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/bin/turbojpeg.dll
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/bin/turbojpeg.pdb
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/lib/pkgconfig/libjpeg.pc
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/lib/pkgconfig/libturbojpeg.pc
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/lib/cmake/libjpeg-turbo/libjpeg-turboConfig.cmake
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/lib/cmake/libjpeg-turbo/libjpeg-turboConfigVersion.cmake
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/lib/cmake/libjpeg-turbo/libjpeg-turboTargets.cmake
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/lib/cmake/libjpeg-turbo/libjpeg-turboTargets-debug.cmake
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/lib/jpeg.lib
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/bin/jpeg62.dll
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/bin/jpeg62.pdb

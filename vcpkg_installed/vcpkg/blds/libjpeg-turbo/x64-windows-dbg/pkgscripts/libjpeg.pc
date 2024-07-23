@@ -1,0 +1,10 @@
+prefix=D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug
+exec_prefix=D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug
+libdir=D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/lib
+includedir=D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/libjpeg-turbo_x64-windows/debug/include
+
+Name: libjpeg
+Description: A SIMD-accelerated JPEG codec that provides the libjpeg API
+Version: 3.0.0
+Libs: -L${libdir} -ljpeg
+Cflags: -I${includedir}

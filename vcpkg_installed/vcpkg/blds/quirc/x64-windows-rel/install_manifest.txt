@@ -1,0 +1,4 @@
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/quirc_x64-windows/lib/quirc.lib
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/quirc_x64-windows/include/quirc.h
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/quirc_x64-windows/share/quirc/quirc-config.cmake
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/quirc_x64-windows/share/quirc/quirc-config-release.cmake

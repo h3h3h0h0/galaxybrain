@@ -1,0 +1,5 @@
+Package: vcpkg-get-python-packages
+Version: 2023-07-28
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 4661f1080d75a71393aabb78b4534089be2363a195f57bafe818ab573cea40b9

@@ -1,0 +1,1073 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake:206 (message)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      The target system is: Windows - 10.0.22621 - AMD64
+      The host system is: Windows - 10.0.22621 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: D:/Programs/MSVS/VC/Tools/MSVC/14.38.33130/bin/Hostx64/x64/cl.exe 
+      Build flags: /nologo;/DWIN32;/D_WINDOWS;/W3;/utf-8;/MP
+      Id flags:  
+      
+      The output was:
+      0
+      CMakeCCompilerId.c
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
+      
+      The C compiler identification is MSVC, found in:
+        D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/3.27.1/CompilerIdC/CMakeCCompilerId.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:1158 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:221 (CMAKE_DETERMINE_MSVC_SHOWINCLUDES_PREFIX)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Detecting C compiler /showIncludes prefix:
+        main.c
+        Note: including file: D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\ShowIncludes\\foo.h
+        
+      Found prefix "Note: including file: "
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-tzrhwx"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-tzrhwx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-tzrhwx'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_12ddd
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_12ddd.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_12ddd.dir\\ /FS -c "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_12ddd.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_12ddd.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_12ddd.exe /implib:cmTC_12ddd.lib /pdb:cmTC_12ddd.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/deps.cmake:13 (check_c_source_compiles)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test HAVE_BUILTIN_BSWAP16"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-2ad2wp"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-2ad2wp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "HAVE_BUILTIN_BSWAP16"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-2ad2wp'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_98367
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DHAVE_BUILTIN_BSWAP16  /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_98367.dir\\src.c.obj /FdCMakeFiles\\cmTC_98367.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-2ad2wp\\src.c
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-2ad2wp\\src.c(3): warning C4013: '__builtin_bswap16' undefined; assuming extern returning int
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_98367.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_98367.dir\\src.c.obj  /out:cmTC_98367.exe /implib:cmTC_98367.lib /pdb:cmTC_98367.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_98367.exe 
+        cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_98367.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_98367.dir\\src.c.obj  /out:cmTC_98367.exe /implib:cmTC_98367.lib /pdb:cmTC_98367.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_98367.dir\\src.c.obj /out:cmTC_98367.exe /implib:cmTC_98367.lib /pdb:cmTC_98367.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_98367.dir/intermediate.manifest CMakeFiles\\cmTC_98367.dir/manifest.res" failed (exit code 1120) with the following output:
+        src.c.obj : error LNK2019: unresolved external symbol __builtin_bswap16 referenced in function main
+        cmTC_98367.exe : fatal error LNK1120: 1 unresolved externals\x0d
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/deps.cmake:21 (check_c_source_compiles)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test HAVE_BUILTIN_BSWAP32"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-6xtlvk"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-6xtlvk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "HAVE_BUILTIN_BSWAP32"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-6xtlvk'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_055c7
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DHAVE_BUILTIN_BSWAP32  /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_055c7.dir\\src.c.obj /FdCMakeFiles\\cmTC_055c7.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-6xtlvk\\src.c
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-6xtlvk\\src.c(3): warning C4013: '__builtin_bswap32' undefined; assuming extern returning int
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_055c7.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_055c7.dir\\src.c.obj  /out:cmTC_055c7.exe /implib:cmTC_055c7.lib /pdb:cmTC_055c7.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_055c7.exe 
+        cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_055c7.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_055c7.dir\\src.c.obj  /out:cmTC_055c7.exe /implib:cmTC_055c7.lib /pdb:cmTC_055c7.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_055c7.dir\\src.c.obj /out:cmTC_055c7.exe /implib:cmTC_055c7.lib /pdb:cmTC_055c7.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_055c7.dir/intermediate.manifest CMakeFiles\\cmTC_055c7.dir/manifest.res" failed (exit code 1120) with the following output:
+        src.c.obj : error LNK2019: unresolved external symbol __builtin_bswap32 referenced in function main
+        cmTC_055c7.exe : fatal error LNK1120: 1 unresolved externals\x0d
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/deps.cmake:29 (check_c_source_compiles)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test HAVE_BUILTIN_BSWAP64"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-mwzh7w"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-mwzh7w"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "HAVE_BUILTIN_BSWAP64"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-mwzh7w'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_c326e
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DHAVE_BUILTIN_BSWAP64  /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_c326e.dir\\src.c.obj /FdCMakeFiles\\cmTC_c326e.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-mwzh7w\\src.c
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-mwzh7w\\src.c(3): warning C4013: '__builtin_bswap64' undefined; assuming extern returning int
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_c326e.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_c326e.dir\\src.c.obj  /out:cmTC_c326e.exe /implib:cmTC_c326e.lib /pdb:cmTC_c326e.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_c326e.exe 
+        cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_c326e.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_c326e.dir\\src.c.obj  /out:cmTC_c326e.exe /implib:cmTC_c326e.lib /pdb:cmTC_c326e.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_c326e.dir\\src.c.obj /out:cmTC_c326e.exe /implib:cmTC_c326e.lib /pdb:cmTC_c326e.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_c326e.dir/intermediate.manifest CMakeFiles\\cmTC_c326e.dir/manifest.res" failed (exit code 1120) with the following output:
+        src.c.obj : error LNK2019: unresolved external symbol __builtin_bswap64 referenced in function main
+        cmTC_c326e.exe : fatal error LNK1120: 1 unresolved externals\x0d
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "D:/Programs/MSVS/VC/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
+      - "cmake/deps.cmake:40 (find_package)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-8em9lj"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-8em9lj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-8em9lj'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_63107
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DCMAKE_HAVE_LIBC_PTHREAD  /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_63107.dir\\src.c.obj /FdCMakeFiles\\cmTC_63107.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-8em9lj\\src.c
+        FAILED: CMakeFiles/cmTC_63107.dir/src.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DCMAKE_HAVE_LIBC_PTHREAD  /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_63107.dir\\src.c.obj /FdCMakeFiles\\cmTC_63107.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-8em9lj\\src.c
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-8em9lj\\src.c(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "D:/Programs/MSVS/VC/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
+      - "cmake/deps.cmake:40 (find_package)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-afo3el"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-afo3el"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-afo3el'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_ed747
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP  -DCHECK_FUNCTION_EXISTS=pthread_create /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_ed747.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_ed747.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-afo3el\\CheckFunctionExists.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_ed747.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_ed747.dir\\CheckFunctionExists.c.obj  /out:cmTC_ed747.exe /implib:cmTC_ed747.lib /pdb:cmTC_ed747.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_ed747.exe 
+        cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_ed747.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_ed747.dir\\CheckFunctionExists.c.obj  /out:cmTC_ed747.exe /implib:cmTC_ed747.lib /pdb:cmTC_ed747.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_ed747.dir\\CheckFunctionExists.c.obj /out:cmTC_ed747.exe /implib:cmTC_ed747.lib /pdb:cmTC_ed747.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_ed747.dir/intermediate.manifest CMakeFiles\\cmTC_ed747.dir/manifest.res" failed (exit code 1104) with the following output:
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib'\x0d
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "D:/Programs/MSVS/VC/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
+      - "cmake/deps.cmake:40 (find_package)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-zlj8dy"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-zlj8dy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-zlj8dy'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_3bfea
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP  -DCHECK_FUNCTION_EXISTS=pthread_create /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_3bfea.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_3bfea.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zlj8dy\\CheckFunctionExists.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_3bfea.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_3bfea.dir\\CheckFunctionExists.c.obj  /out:cmTC_3bfea.exe /implib:cmTC_3bfea.lib /pdb:cmTC_3bfea.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_3bfea.exe 
+        cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_3bfea.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_3bfea.dir\\CheckFunctionExists.c.obj  /out:cmTC_3bfea.exe /implib:cmTC_3bfea.lib /pdb:cmTC_3bfea.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_3bfea.dir\\CheckFunctionExists.c.obj /out:cmTC_3bfea.exe /implib:cmTC_3bfea.lib /pdb:cmTC_3bfea.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_3bfea.dir/intermediate.manifest CMakeFiles\\cmTC_3bfea.dir/manifest.res" failed (exit code 1104) with the following output:
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib'\x0d
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/deps.cmake:60 (check_c_source_compiles)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test HAVE_MATH_LIBRARY"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-e5ipmx"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-e5ipmx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "HAVE_MATH_LIBRARY"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-e5ipmx'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_5061d
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DHAVE_MATH_LIBRARY  /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_5061d.dir\\src.c.obj /FdCMakeFiles\\cmTC_5061d.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-e5ipmx\\src.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_5061d.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_5061d.dir\\src.c.obj  /out:cmTC_5061d.exe /implib:cmTC_5061d.lib /pdb:cmTC_5061d.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "cmake/deps.cmake:131 (check_include_files)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Looking for include file GLUT/glut.h"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-060gxm"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-060gxm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "HAVE_GLUT_GLUT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-060gxm'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_fc212
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_fc212.dir\\HAVE_GLUT_GLUT_H.c.obj /FdCMakeFiles\\cmTC_fc212.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-060gxm\\HAVE_GLUT_GLUT_H.c
+        FAILED: CMakeFiles/cmTC_fc212.dir/HAVE_GLUT_GLUT_H.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_fc212.dir\\HAVE_GLUT_GLUT_H.c.obj /FdCMakeFiles\\cmTC_fc212.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-060gxm\\HAVE_GLUT_GLUT_H.c
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-060gxm\\HAVE_GLUT_GLUT_H.c(2): fatal error C1083: Cannot open include file: 'GLUT/glut.h': No such file or directory
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "cmake/deps.cmake:132 (check_include_files)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Looking for include file GL/glut.h"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-fy40a8"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-fy40a8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "HAVE_GL_GLUT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-fy40a8'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_41072
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_41072.dir\\HAVE_GL_GLUT_H.c.obj /FdCMakeFiles\\cmTC_41072.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fy40a8\\HAVE_GL_GLUT_H.c
+        FAILED: CMakeFiles/cmTC_41072.dir/HAVE_GL_GLUT_H.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_41072.dir\\HAVE_GL_GLUT_H.c.obj /FdCMakeFiles\\cmTC_41072.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fy40a8\\HAVE_GL_GLUT_H.c
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fy40a8\\HAVE_GL_GLUT_H.c(2): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "cmake/deps.cmake:133 (check_include_files)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Looking for include file OpenGL/glut.h"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-gaveb8"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-gaveb8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "HAVE_OPENGL_GLUT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-gaveb8'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_3989d
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_3989d.dir\\HAVE_OPENGL_GLUT_H.c.obj /FdCMakeFiles\\cmTC_3989d.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-gaveb8\\HAVE_OPENGL_GLUT_H.c
+        FAILED: CMakeFiles/cmTC_3989d.dir/HAVE_OPENGL_GLUT_H.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_3989d.dir\\HAVE_OPENGL_GLUT_H.c.obj /FdCMakeFiles\\cmTC_3989d.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-gaveb8\\HAVE_OPENGL_GLUT_H.c
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-gaveb8\\HAVE_OPENGL_GLUT_H.c(2): fatal error C1083: Cannot open include file: 'OpenGL/glut.h': No such file or directory
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "cmake/deps.cmake:134 (check_include_files)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Looking for include file shlwapi.h"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-5pcolb"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-5pcolb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "HAVE_SHLWAPI_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-5pcolb'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_f0f8e
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_f0f8e.dir\\HAVE_SHLWAPI_H.c.obj /FdCMakeFiles\\cmTC_f0f8e.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-5pcolb\\HAVE_SHLWAPI_H.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_f0f8e.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_f0f8e.dir\\HAVE_SHLWAPI_H.c.obj  /out:cmTC_f0f8e.exe /implib:cmTC_f0f8e.lib /pdb:cmTC_f0f8e.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "cmake/deps.cmake:135 (check_include_files)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Looking for include file unistd.h"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-v5yikk"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-v5yikk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-v5yikk'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_b3d41
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_b3d41.dir\\HAVE_UNISTD_H.c.obj /FdCMakeFiles\\cmTC_b3d41.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-v5yikk\\HAVE_UNISTD_H.c
+        FAILED: CMakeFiles/cmTC_b3d41.dir/HAVE_UNISTD_H.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_b3d41.dir\\HAVE_UNISTD_H.c.obj /FdCMakeFiles\\cmTC_b3d41.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-v5yikk\\HAVE_UNISTD_H.c
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-v5yikk\\HAVE_UNISTD_H.c(2): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "cmake/deps.cmake:136 (check_include_files)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Looking for include file wincodec.h"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-iwvyph"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-iwvyph"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "HAVE_WINCODEC_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-iwvyph'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_edcc5
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_edcc5.dir\\HAVE_WINCODEC_H.c.obj /FdCMakeFiles\\cmTC_edcc5.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-iwvyph\\HAVE_WINCODEC_H.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_edcc5.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_edcc5.dir\\HAVE_WINCODEC_H.c.obj  /out:cmTC_edcc5.exe /implib:cmTC_edcc5.lib /pdb:cmTC_edcc5.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckIncludeFiles.cmake:132 (try_compile)"
+      - "cmake/deps.cmake:137 (check_include_files)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Looking for include file windows.h"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-yjzzkz"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-yjzzkz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "HAVE_WINDOWS_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-yjzzkz'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_83d7e
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo   /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_83d7e.dir\\HAVE_WINDOWS_H.c.obj /FdCMakeFiles\\cmTC_83d7e.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-yjzzkz\\HAVE_WINDOWS_H.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_83d7e.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_83d7e.dir\\HAVE_WINDOWS_H.c.obj  /out:cmTC_83d7e.exe /implib:cmTC_83d7e.lib /pdb:cmTC_83d7e.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:90 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_SSE41"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-crnvqs"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-crnvqs"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_SSE41"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-crnvqs'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_4f109
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_SSE41 -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_4f109.dir\\src.c.obj /FdCMakeFiles\\cmTC_4f109.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-crnvqs\\src.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_4f109.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_4f109.dir\\src.c.obj  /out:cmTC_4f109.exe /implib:cmTC_4f109.lib /pdb:cmTC_4f109.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:90 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_SSE2"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-y6ilyh"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-y6ilyh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_SSE2"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-y6ilyh'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_83f28
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_SSE2 -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_83f28.dir\\src.c.obj /FdCMakeFiles\\cmTC_83f28.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-y6ilyh\\src.c
+        [2/2] cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_83f28.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_83f28.dir\\src.c.obj  /out:cmTC_83f28.exe /implib:cmTC_83f28.lib /pdb:cmTC_83f28.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:90 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_MIPS32"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-80asg6"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-80asg6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_MIPS32"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-80asg6'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_bb830
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_MIPS32 -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_bb830.dir\\src.c.obj /FdCMakeFiles\\cmTC_bb830.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-80asg6\\src.c
+        FAILED: CMakeFiles/cmTC_bb830.dir/src.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_MIPS32 -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_bb830.dir\\src.c.obj /FdCMakeFiles\\cmTC_bb830.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-80asg6\\src.c
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-80asg6\\src.c(5): error C2065: 'this': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-80asg6\\src.c(5): error C2146: syntax error: missing ';' before identifier 'is'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-80asg6\\src.c(5): error C2065: 'is': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-80asg6\\src.c(5): error C2146: syntax error: missing ';' before identifier 'not'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-80asg6\\src.c(5): error C2065: 'not': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-80asg6\\src.c(5): error C2146: syntax error: missing ';' before identifier 'valid'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-80asg6\\src.c(5): error C2065: 'valid': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-80asg6\\src.c(5): error C2146: syntax error: missing ';' before identifier 'code'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-80asg6\\src.c(7): error C2065: 'code': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-80asg6\\src.c(7): error C2143: syntax error: missing ';' before 'return'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:97 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_MIPS32"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-k9vc3l"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-k9vc3l"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_MIPS32"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-k9vc3l'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_cf8fb
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_MIPS32 -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP  NOTFOUND /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_cf8fb.dir\\src.c.obj /FdCMakeFiles\\cmTC_cf8fb.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-k9vc3l\\src.c
+        FAILED: CMakeFiles/cmTC_cf8fb.dir/src.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_MIPS32 -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP  NOTFOUND /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_cf8fb.dir\\src.c.obj /FdCMakeFiles\\cmTC_cf8fb.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-k9vc3l\\src.c
+        cl : Command line warning D9024 : unrecognized source file type 'NOTFOUND', object file assumed
+        cl : Command line warning D9027 : source file 'NOTFOUND' ignored
+        cl : Command line warning D9030 : '/showIncludes' is incompatible with multiprocessing; ignoring /MP switch
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-k9vc3l\\src.c(5): error C2065: 'this': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-k9vc3l\\src.c(5): error C2146: syntax error: missing ';' before identifier 'is'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-k9vc3l\\src.c(5): error C2065: 'is': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-k9vc3l\\src.c(5): error C2146: syntax error: missing ';' before identifier 'not'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-k9vc3l\\src.c(5): error C2065: 'not': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-k9vc3l\\src.c(5): error C2146: syntax error: missing ';' before identifier 'valid'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-k9vc3l\\src.c(5): error C2065: 'valid': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-k9vc3l\\src.c(5): error C2146: syntax error: missing ';' before identifier 'code'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-k9vc3l\\src.c(7): error C2065: 'code': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-k9vc3l\\src.c(7): error C2143: syntax error: missing ';' before 'return'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:90 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_MIPS_DSP_R2"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-wde8h6"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-wde8h6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_MIPS_DSP_R2"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-wde8h6'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_6ba16
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_MIPS_DSP_R2 -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_6ba16.dir\\src.c.obj /FdCMakeFiles\\cmTC_6ba16.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wde8h6\\src.c
+        FAILED: CMakeFiles/cmTC_6ba16.dir/src.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_MIPS_DSP_R2 -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_6ba16.dir\\src.c.obj /FdCMakeFiles\\cmTC_6ba16.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wde8h6\\src.c
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wde8h6\\src.c(5): error C2065: 'this': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wde8h6\\src.c(5): error C2146: syntax error: missing ';' before identifier 'is'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wde8h6\\src.c(5): error C2065: 'is': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wde8h6\\src.c(5): error C2146: syntax error: missing ';' before identifier 'not'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wde8h6\\src.c(5): error C2065: 'not': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wde8h6\\src.c(5): error C2146: syntax error: missing ';' before identifier 'valid'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wde8h6\\src.c(5): error C2065: 'valid': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wde8h6\\src.c(5): error C2146: syntax error: missing ';' before identifier 'code'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wde8h6\\src.c(7): error C2065: 'code': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wde8h6\\src.c(7): error C2143: syntax error: missing ';' before 'return'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:97 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_MIPS_DSP_R2"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-fdjaba"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-fdjaba"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_MIPS_DSP_R2"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-fdjaba'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_83f1f
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_MIPS_DSP_R2 -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP  NOTFOUND /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_83f1f.dir\\src.c.obj /FdCMakeFiles\\cmTC_83f1f.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fdjaba\\src.c
+        FAILED: CMakeFiles/cmTC_83f1f.dir/src.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_MIPS_DSP_R2 -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP  NOTFOUND /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_83f1f.dir\\src.c.obj /FdCMakeFiles\\cmTC_83f1f.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fdjaba\\src.c
+        cl : Command line warning D9024 : unrecognized source file type 'NOTFOUND', object file assumed
+        cl : Command line warning D9027 : source file 'NOTFOUND' ignored
+        cl : Command line warning D9030 : '/showIncludes' is incompatible with multiprocessing; ignoring /MP switch
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fdjaba\\src.c(5): error C2065: 'this': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fdjaba\\src.c(5): error C2146: syntax error: missing ';' before identifier 'is'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fdjaba\\src.c(5): error C2065: 'is': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fdjaba\\src.c(5): error C2146: syntax error: missing ';' before identifier 'not'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fdjaba\\src.c(5): error C2065: 'not': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fdjaba\\src.c(5): error C2146: syntax error: missing ';' before identifier 'valid'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fdjaba\\src.c(5): error C2065: 'valid': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fdjaba\\src.c(5): error C2146: syntax error: missing ';' before identifier 'code'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fdjaba\\src.c(7): error C2065: 'code': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-fdjaba\\src.c(7): error C2143: syntax error: missing ';' before 'return'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:90 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_NEON"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-zln643"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-zln643"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_NEON"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-zln643'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_9e8db
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_NEON -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_9e8db.dir\\src.c.obj /FdCMakeFiles\\cmTC_9e8db.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zln643\\src.c
+        FAILED: CMakeFiles/cmTC_9e8db.dir/src.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_NEON -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_9e8db.dir\\src.c.obj /FdCMakeFiles\\cmTC_9e8db.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zln643\\src.c
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zln643\\src.c(5): error C2065: 'this': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zln643\\src.c(5): error C2146: syntax error: missing ';' before identifier 'is'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zln643\\src.c(5): error C2065: 'is': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zln643\\src.c(5): error C2146: syntax error: missing ';' before identifier 'not'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zln643\\src.c(5): error C2065: 'not': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zln643\\src.c(5): error C2146: syntax error: missing ';' before identifier 'valid'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zln643\\src.c(5): error C2065: 'valid': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zln643\\src.c(5): error C2146: syntax error: missing ';' before identifier 'code'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zln643\\src.c(7): error C2065: 'code': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-zln643\\src.c(7): error C2143: syntax error: missing ';' before 'return'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:97 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_NEON"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-xf4ypa"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-xf4ypa"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_NEON"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-xf4ypa'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_e45fd
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_NEON -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP  NOTFOUND /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_e45fd.dir\\src.c.obj /FdCMakeFiles\\cmTC_e45fd.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-xf4ypa\\src.c
+        FAILED: CMakeFiles/cmTC_e45fd.dir/src.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_NEON -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP  NOTFOUND /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_e45fd.dir\\src.c.obj /FdCMakeFiles\\cmTC_e45fd.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-xf4ypa\\src.c
+        cl : Command line warning D9024 : unrecognized source file type 'NOTFOUND', object file assumed
+        cl : Command line warning D9027 : source file 'NOTFOUND' ignored
+        cl : Command line warning D9030 : '/showIncludes' is incompatible with multiprocessing; ignoring /MP switch
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-xf4ypa\\src.c(5): error C2065: 'this': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-xf4ypa\\src.c(5): error C2146: syntax error: missing ';' before identifier 'is'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-xf4ypa\\src.c(5): error C2065: 'is': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-xf4ypa\\src.c(5): error C2146: syntax error: missing ';' before identifier 'not'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-xf4ypa\\src.c(5): error C2065: 'not': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-xf4ypa\\src.c(5): error C2146: syntax error: missing ';' before identifier 'valid'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-xf4ypa\\src.c(5): error C2065: 'valid': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-xf4ypa\\src.c(5): error C2146: syntax error: missing ';' before identifier 'code'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-xf4ypa\\src.c(7): error C2065: 'code': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-xf4ypa\\src.c(7): error C2143: syntax error: missing ';' before 'return'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:90 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_MSA"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-wdtl5l"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-wdtl5l"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_MSA"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-wdtl5l'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_36235
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_MSA -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_36235.dir\\src.c.obj /FdCMakeFiles\\cmTC_36235.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wdtl5l\\src.c
+        FAILED: CMakeFiles/cmTC_36235.dir/src.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_MSA -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP   /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_36235.dir\\src.c.obj /FdCMakeFiles\\cmTC_36235.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wdtl5l\\src.c
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wdtl5l\\src.c(5): error C2065: 'this': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wdtl5l\\src.c(5): error C2146: syntax error: missing ';' before identifier 'is'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wdtl5l\\src.c(5): error C2065: 'is': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wdtl5l\\src.c(5): error C2146: syntax error: missing ';' before identifier 'not'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wdtl5l\\src.c(5): error C2065: 'not': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wdtl5l\\src.c(5): error C2146: syntax error: missing ';' before identifier 'valid'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wdtl5l\\src.c(5): error C2065: 'valid': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wdtl5l\\src.c(5): error C2146: syntax error: missing ';' before identifier 'code'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wdtl5l\\src.c(7): error C2065: 'code': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-wdtl5l\\src.c(7): error C2143: syntax error: missing ';' before 'return'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:97 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:112 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_MSA"
+    directories:
+      source: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-ulhuis"
+      binary: "D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-ulhuis"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP "
+      CMAKE_C_FLAGS_DEBUG: "/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 "
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MSVC_DEBUG_INFORMATION_FORMAT: ""
+      CMAKE_MSVC_RUNTIME_LIBRARY: "MultiThreaded$<$<CONFIG:Debug>:Debug>$<$<STREQUAL:dynamic,dynamic>:DLL>"
+      VCPKG_APPLOCAL_DEPS: "OFF"
+      VCPKG_CHAINLOAD_TOOLCHAIN_FILE: "D:/Programs/MSVS/VC/vcpkg/scripts/toolchains/windows.cmake"
+      VCPKG_TARGET_ARCHITECTURE: "x64"
+      VCPKG_TARGET_TRIPLET: "x64-windows"
+      Z_VCPKG_ROOT_DIR: "D:/Programs/MSVS/VC/vcpkg"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_MSA"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-dbg/CMakeFiles/CMakeScratch/TryCompile-ulhuis'
+        
+        Run Build Command(s): D:/Programs/MSVS/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe -v cmTC_20bc6
+        [1/2] D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_MSA -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP  NOTFOUND /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_20bc6.dir\\src.c.obj /FdCMakeFiles\\cmTC_20bc6.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-ulhuis\\src.c
+        FAILED: CMakeFiles/cmTC_20bc6.dir/src.c.obj 
+        D:\\Programs\\MSVS\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe  /nologo -DWEBP_HAVE_FLAG_MSA -ID:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\src\\v1.3.1-b98f236d0c.clean /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /MP  NOTFOUND /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_20bc6.dir\\src.c.obj /FdCMakeFiles\\cmTC_20bc6.dir\\ /FS -c D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-ulhuis\\src.c
+        cl : Command line warning D9024 : unrecognized source file type 'NOTFOUND', object file assumed
+        cl : Command line warning D9027 : source file 'NOTFOUND' ignored
+        cl : Command line warning D9030 : '/showIncludes' is incompatible with multiprocessing; ignoring /MP switch
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-ulhuis\\src.c(5): error C2065: 'this': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-ulhuis\\src.c(5): error C2146: syntax error: missing ';' before identifier 'is'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-ulhuis\\src.c(5): error C2065: 'is': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-ulhuis\\src.c(5): error C2146: syntax error: missing ';' before identifier 'not'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-ulhuis\\src.c(5): error C2065: 'not': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-ulhuis\\src.c(5): error C2146: syntax error: missing ';' before identifier 'valid'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-ulhuis\\src.c(5): error C2065: 'valid': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-ulhuis\\src.c(5): error C2146: syntax error: missing ';' before identifier 'code'
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-ulhuis\\src.c(7): error C2065: 'code': undeclared identifier
+        D:\\Programming\\galaxybrain\\galaxybrain\\vcpkg_installed\\vcpkg\\blds\\libwebp\\x64-windows-dbg\\CMakeFiles\\CMakeScratch\\TryCompile-ulhuis\\src.c(7): error C2143: syntax error: missing ';' before 'return'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...

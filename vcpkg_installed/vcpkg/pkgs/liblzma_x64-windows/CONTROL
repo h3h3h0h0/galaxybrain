@@ -1,0 +1,8 @@
+Package: liblzma
+Version: 5.4.3
+Port-Version: 1
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 31471458bafb0cef0b2b95ccebbab227b7f9fa5acde22301a26f9b622e400987
+Description: Compression library with an API similar to that of zlib.

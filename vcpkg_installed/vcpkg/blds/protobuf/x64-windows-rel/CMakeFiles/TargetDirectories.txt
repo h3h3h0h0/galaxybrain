@@ -1,0 +1,9 @@
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/protobuf/x64-windows-rel/CMakeFiles/libprotobuf-lite.dir
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/protobuf/x64-windows-rel/CMakeFiles/libprotobuf.dir
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/protobuf/x64-windows-rel/CMakeFiles/libprotoc.dir
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/protobuf/x64-windows-rel/CMakeFiles/protoc.dir
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/protobuf/x64-windows-rel/CMakeFiles/edit_cache.dir
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/protobuf/x64-windows-rel/CMakeFiles/rebuild_cache.dir
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/protobuf/x64-windows-rel/CMakeFiles/list_install_components.dir
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/protobuf/x64-windows-rel/CMakeFiles/install.dir
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/blds/protobuf/x64-windows-rel/CMakeFiles/install/local.dir

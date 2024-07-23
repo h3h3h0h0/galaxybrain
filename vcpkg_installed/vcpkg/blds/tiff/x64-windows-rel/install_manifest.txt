@@ -1,0 +1,11 @@
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/lib/pkgconfig/libtiff-4.pc
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/lib/tiff.lib
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/bin/tiff.dll
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/include/tiff.h
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/include/tiffio.h
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/include/tiffvers.h
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/include/tiffconf.h
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/lib/cmake/tiff/TiffTargets.cmake
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/lib/cmake/tiff/TiffTargets-release.cmake
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/lib/cmake/tiff/TiffConfigVersion.cmake
+D:/Programming/galaxybrain/galaxybrain/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/lib/cmake/tiff/TiffConfig.cmake
