@@ -56,7 +56,7 @@ public:
 			cnt++;
 		}
 	}
-	cudaError_t render(int3* image_res, int width, int height, int max_bounces, double* x, double* y, double* z, size_t nblocks, int tpb, int device = 0);
+	cudaError_t render(uchar3* image_res, int width, int height, int max_bounces, double* x, double* y, double* z, size_t nblocks, int tpb, int device = 0);
 	cudaError_t init_render(vector<Body> bodies, float3 cbl, float3 ch, float3 cv, int rays_per, double fl); //norm will be calculated as the cross product of ch and cv
 	cudaError_t delete_render();
 };

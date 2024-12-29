@@ -10,6 +10,7 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <stdlib.h>
+#include "render.cuh"
 
 using namespace std;
 using namespace cv;
@@ -29,7 +30,7 @@ int main()
     std::random_device                  rand_dev;
     std::mt19937                        generator(rand_dev());
     vector<Body> bodies;
-    bodies.emplace_back(Body{ 0, 0, 0, 0, 0, 0, 100000000000.0 });
+    bodies.emplace_back(Body{ 0, 0, 0, 0, 0, 0, 100000000000.0, make_float3(0, 0, 0), make_float3(0, 0, 0), make_float3(0, 0, 0), 0, make_float2(0, 0), 1});
 
     Mat img = Mat::zeros(1000, 1000, CV_8UC1);
     for (int i = 0; i < 4999; i++) {
@@ -49,13 +50,17 @@ int main()
         double vx = cv * cos(ca);
         double vy = cv * sin(ca);
         double vz = 0;
-        bodies.emplace_back(Body{ cx, cy, cz, vx, vy, vz, m});
+        bodies.emplace_back(Body{ cx, cy, cz, vx, vy, vz, m, make_float3(100, 100, 100), make_float3(0, 0, 0), make_float3(0, 0, 0), 0, make_float2(0, 0), 1 });
     }
     NBody* bn = NULL;
     cudaError_t err = NBody::makeNBody(bn, bodies, rad);
     Mat pimg = img.clone();
+
+    Render r;
+    r.init_render(bodies, make_float3(0, 0, 10000), make_float3(-1000, 0, 0), make_float3(0, -1000, 0), 10, 1000);
+
     for (int i = 0; i < 1000000000; i++) {
-        img = Mat::zeros(1000, 1000, CV_8UC1);
+        img = Mat::zeros(1000, 1000, CV_8UC3);
         err = bn->step(1000, 10, 1024, 0);
         memcpy(&px, &x, sizeof(x));
         memcpy(&py, &y, sizeof(x));
@@ -65,21 +70,23 @@ int main()
             cout<<"j: "<<j<<" dx: "<<x[j]-px[j]<<" dy: "<<y[j] - py[j] <<" dz: "<<z[j] - pz[j] <<endl;
         }*/
         //cout << "Error Pos: " << cudaGetErrorString(err) << endl;
-        for (int j = 0; j < 5000; j++) {
-            int imgx = (int)(x[j] / rad * 500 + 500);
-            imgx = min(1000, max(0, imgx));
-            int imgy = (int)(y[j] / rad * 500 + 500);
-            imgy = min(1000, max(0, imgy));
-            img.at<uchar>(imgx, imgy) = (bodies[j].m == 100? 25 : (bodies[j].m == 10000? 70 : 255));
+        uchar3 *img_res = new uchar3[1000000];
+        err = r.render(img_res, 1000, 1000, 10, x, y, z, 10, 1024, 0);
+
+        cout << "render status " << err << endl;
+        for (int j = 0; j < 1000; j++) {
+            for (int k = 0; k < 1000; k++) {
+                int idx = j * 1000 + k;
+                img.at<uchar3>(j, k) = img_res[idx];
+            }
         }
-        Mat oimg = Mat::ones(1000, 1000, CV_8UC1);
-        oimg.setTo(25);
-        Mat fimg = img + pimg - oimg;
-        pimg = fimg.clone();
+        Mat fimg = img;
         putText(fimg, "Frame: " + to_string(i), Point(10, 30), FONT_HERSHEY_SIMPLEX, 1, Scalar(255, 255, 255), 2);
         imshow("Test", fimg);
         waitKey(1);
+        delete [] img_res;
 	}
+    r.delete_render();
 
     delete[] x;
     delete[] y;

@@ -1,5 +1,7 @@
 #define _USE_MATH_DEFINES
 #include "render.cuh"
+#include <opencv2/core/hal/interface.h>
+#include <iostream>
 
 //helper implementations
 __device__ float3 operator+(const float3 &a, const float3 &b) {
@@ -112,6 +114,9 @@ static __global__ void render_kernel(int rn, int bn, //number of rays and bodies
 				last_bounce[i] = j;
 				ro[i] = closest_point;
 				rd[i] = normalize(rd[i] + deflection_norm * tan(alpha));
+				if(isnan(ro[i].x) || isnan(ro[i].y) || isnan(ro[i].z)) {
+					printf("nan detected in lensing\n");
+				}
 				continue;
 			}
 			else {
@@ -180,6 +185,9 @@ static __global__ void render_kernel(int rn, int bn, //number of rays and bodies
 				ro[i] = inner_intersection + rd[i] * 0.0001;
 			}
 			last_bounce[i] = j;
+			if (isnan(ro[i].x) || isnan(ro[i].y) || isnan(ro[i].z)) {
+				printf("nan detected in scattering\n");
+			}
 		}
 	}
 }
@@ -192,9 +200,11 @@ __global__ void render_init(int nbodies, int rays_per, float3* bodies_pos, float
 	curand_init((unsigned long long)clock() + tId, 0, 0, &state);
 	for (int i = idx; i < nbodies; i += srd) {
 		for (int j = 0; j < rays_per; j++) {
+			zero:
 			float3 x_offset = make_float3(1, 0, 0) * (curand_uniform_double(&state) - 0.5);
 			float3 y_offset = make_float3(0, 1, 0) * (curand_uniform_double(&state) - 0.5);
 			float3 z_offset = make_float3(0, 0, 1) * (curand_uniform_double(&state) - 0.5);
+			if(dot(x_offset, x_offset) == 0 && dot(y_offset, y_offset) == 0 && dot(z_offset, z_offset) == 0) goto zero;
 			origins[i * rays_per + j] = bodies_pos[i];
 			directions[i * rays_per + j] = normalize(x_offset + y_offset + z_offset);
 			rgb[i * rays_per + j] = bodies_rgb[i];
@@ -240,54 +250,68 @@ float3 norm_nodevice(float3 a) {
 float3 cross_nodevice(float3 a, float3 b) {
 	return make_float3(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
 }
+bool neq_nodevice(float3 a, float3 b) {
+	return a.x != b.x || a.y != b.y || a.z != b.z;
+}
 
-cudaError_t Render::render(int3* image_res, int width, int height, int max_bounces, double* x, double* y, double *z, size_t nblocks, int tpb, int device) {
+cudaError_t Render::render(uchar3* image_res, int width, int height, int max_bounces, double* x, double* y, double *z, size_t nblocks, int tpb, int device) {
 	cudaSetDevice(device);
+	cudaError_t err;
 	float3* bpos = new float3[nbodies];
+	float3* t_origins = new float3[nbodies * rays_per];
+	float3* t_directions = new float3[nbodies * rays_per];
+	float3* t_rgb = new float3[nbodies * rays_per];
+	bool* t_active = new bool[nbodies * rays_per];
+	float3* image = new float3[width * height];
+	float3* image_acc = new float3[width * height];
 	for (int i = 0; i < nbodies; i++) {
 		bpos[i] = make_float3(x[i], y[i], z[i]);
 	}
-	cudaMemcpy(bodies_pos, bpos, sizeof(float3) * nbodies, cudaMemcpyHostToDevice);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	err = cudaMemcpy(bodies_pos, bpos, sizeof(float3) * nbodies, cudaMemcpyHostToDevice);
+	if (err != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
+	cout<<"cpy done"<<endl;
 	render_init<<<nblocks, tpb>>>(nbodies, rays_per, bodies_pos, bodies_rgb, bodies_rad, origins, directions, rgb, active, last_bounce);
+	err = cudaDeviceSynchronize();
+	if (err != cudaSuccess) {
+		cout << "error in init " << err << endl;
+		return err;
+	}
 	for (int i = 0; i < max_bounces; i++) {
-		render_kernel << <nblocks, tpb >> > (nbodies*rays_per, nbodies, origins, directions, rgb, active, bodies_pos, bodies_rad, inner_ratios, outer_ratios, transl_ratios, mass, event_horizon, ref_idx, last_bounce, shuffled); 
-		if (cudaGetLastError() != cudaSuccess) {
-			return cudaGetLastError();
+		cout << "Bounce " << i << " start" << endl;
+		render_kernel << <nblocks, tpb >> > (nbodies*rays_per, nbodies, origins, directions, rgb, active, bodies_pos, bodies_rad, inner_ratios, outer_ratios, transl_ratios, mass, event_horizon, ref_idx, last_bounce, shuffled);
+		err = cudaDeviceSynchronize();
+		if (err != cudaSuccess) {
+			cout << "error in sync " << err << endl;
+			return err;
 		}
-		cudaDeviceSynchronize();
-		if (cudaGetLastError() != cudaSuccess) {
-			return cudaGetLastError();
-		}
+		cout<< "Bounce " << i << " done" << endl;
 	}
-	float3 *t_origins = new float3[nbodies * rays_per];
-	float3 *t_directions = new float3[nbodies * rays_per];
-	float3 *t_rgb = new float3[nbodies * rays_per];
-	bool *t_active = new bool[nbodies * rays_per];
-	cudaMemcpy(t_origins, origins, sizeof(float3) * nbodies * rays_per, cudaMemcpyDeviceToHost);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	//copy the results back to the host
+	err = cudaMemcpy(t_origins, origins, sizeof(float3) * nbodies * rays_per, cudaMemcpyDeviceToHost);
+	if (err != cudaSuccess) {
+		return err;
 	}
-	cudaMemcpy(t_directions, directions, sizeof(float3) * nbodies * rays_per, cudaMemcpyDeviceToHost);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	err = cudaMemcpy(t_directions, directions, sizeof(float3) * nbodies * rays_per, cudaMemcpyDeviceToHost);
+	if (err != cudaSuccess) {
+		return err;
 	}
-	cudaMemcpy(t_rgb, rgb, sizeof(float3) * nbodies * rays_per, cudaMemcpyDeviceToHost);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	err = cudaMemcpy(t_rgb, rgb, sizeof(float3) * nbodies * rays_per, cudaMemcpyDeviceToHost);
+	if (err != cudaSuccess) {
+		return err;
 	}
-	cudaMemcpy(t_active, active, sizeof(bool) * nbodies * rays_per, cudaMemcpyDeviceToHost);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	err = cudaMemcpy(t_active, active, sizeof(bool) * nbodies * rays_per, cudaMemcpyDeviceToHost);
+	if (err != cudaSuccess) {
+		return err;
 	}
-	float3 *image = new float3[width * height];
 	for(int i = 0; i < width*height; i++) {
 		image[i] = make_float3(0, 0, 0);
 	}
+	for(int i = 0; i < nbodies*rays_per; i++) if(isnan(t_origins[i].x)) cout<<">>>>"<< t_active[i]<<" "<<t_origins[i].x<<" "<<t_origins[i].y<<" "<<t_origins[i].z << "\tidx is: "<< i << endl;
 	//put the rays onto the image
 	for (int i = 0; i < nbodies * rays_per; i++) {
+		//std::cout<<"calculating ray ("<<t_origins[i].x<<", "<< t_origins[i].y<<", "<< t_origins[i].z<<") -> ("<< t_directions[i].x<<", "<< t_directions[i].y<<", "<< t_directions[i].z<<")"<<std::endl;
 		if(!t_active[i]) continue;
 		double angleToNormal = angle_nodevice(t_directions[i], cam_norm);
 		if (angleToNormal > M_PI / 2) {
@@ -307,7 +331,11 @@ cudaError_t Render::render(int3* image_res, int width, int height, int max_bounc
 		float3 image_diff_norm = norm_nodevice(diff_nodevice(image_focus, hit));
 		int x = (int)(width*hd / veclen_nodevice(cam_h));
 		int y = (int)(height*vd / veclen_nodevice(cam_v));
-		image[y*width + x] = sum_nodevice({image[y*width + x], prod_nodevice(t_rgb[i], dot_nodevice(t_directions[i], image_diff_norm))});
+		image_acc[y*width + x] = sum_nodevice({image_acc[y*width + x], prod_nodevice(t_rgb[i], dot_nodevice(t_directions[i], image_diff_norm))});
+		if (neq_nodevice(sum_nodevice({ image[y * width + x], image_acc[y * width + x] }), image[y * width + x])) {
+			image[y*width+x] = sum_nodevice({image[y*width+x], image_acc[y*width+x]});
+			image_acc[y*width+x] = make_float3(0, 0, 0);
+		}
 	}
 	//map the image to standard 0-255 range
 	double abs_max_color = 0;
@@ -317,44 +345,51 @@ cudaError_t Render::render(int3* image_res, int width, int height, int max_bounc
 		abs_max_color = max(abs_max_color, (double)(image[i].z));
 	}
 	for(int i = 0; i < width*height; i++) {
-		image_res[i].x = (int)(image[i].x * 255 / abs_max_color);
-		image_res[i].y = (int)(image[i].y * 255 / abs_max_color);
-		image_res[i].z = (int)(image[i].z * 255 / abs_max_color);
+		image_res[i].x = (unsigned char)(image[i].x * 255 / abs_max_color);
+		image_res[i].y = (unsigned char)(image[i].y * 255 / abs_max_color);
+		image_res[i].z = (unsigned char)(image[i].z * 255 / abs_max_color);
 	}
+	delete[] t_origins;
+	delete[] t_directions;
+	delete[] t_rgb;
+	delete[] t_active;
+	delete[] image;
+	delete[] image_acc;
+	delete[] bpos;
 	return cudaSuccess;
 }
 
 cudaError_t Render::init_render(vector<Body> bodies, float3 cbl, float3 ch, float3 cv, int rays_per, double fl) {
 	cudaMallocManaged(&bodies_pos, sizeof(float3) * bodies.size());
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&bodies_rgb, sizeof(float3) * bodies.size());
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&bodies_rad, sizeof(float2) * bodies.size());
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&inner_ratios, sizeof(float3) * bodies.size());
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&outer_ratios, sizeof(float3) * bodies.size());
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&transl_ratios, sizeof(double) * bodies.size());
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&mass, sizeof(double) * bodies.size());
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&event_horizon, sizeof(double) * bodies.size());
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&ref_idx, sizeof(double) * bodies.size());
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&origins, sizeof(float3) * bodies.size() * rays_per);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&directions, sizeof(float3) * bodies.size() * rays_per);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&rgb, sizeof(float3) * bodies.size() * rays_per);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&active, sizeof(bool) * bodies.size() * rays_per);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&last_bounce, sizeof(int) * bodies.size() * rays_per);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMallocManaged(&shuffled, sizeof(int) * bodies.size());
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	nbodies = bodies.size();
 	this->rays_per = rays_per;
 	cam_bl = cbl;
@@ -385,56 +420,65 @@ cudaError_t Render::init_render(vector<Body> bodies, float3 cbl, float3 ch, floa
 		ri[i] = bodies[i].ref_idx;
 	}
 	cudaMemcpy(bodies_pos, bpos, sizeof(float3) * nbodies, cudaMemcpyHostToDevice);
-	if(cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if(cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMemcpy(bodies_rgb, brgb, sizeof(float3) * nbodies, cudaMemcpyHostToDevice);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMemcpy(bodies_rad, brad, sizeof(float2) * nbodies, cudaMemcpyHostToDevice);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMemcpy(inner_ratios, irat, sizeof(float3) * nbodies, cudaMemcpyHostToDevice);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMemcpy(outer_ratios, orat, sizeof(float3) * nbodies, cudaMemcpyHostToDevice);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMemcpy(transl_ratios, trat, sizeof(double) * nbodies, cudaMemcpyHostToDevice);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMemcpy(mass, m, sizeof(double) * nbodies, cudaMemcpyHostToDevice);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMemcpy(event_horizon, eh, sizeof(double) * nbodies, cudaMemcpyHostToDevice);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaMemcpy(ref_idx, ri, sizeof(double) * nbodies, cudaMemcpyHostToDevice);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
+	delete [] bpos;
+	delete [] brgb;
+	delete [] brad;
+	delete [] irat;
+	delete [] orat;
+	delete [] trat;
+	delete [] m;
+	delete [] eh;
+	delete [] ri;
 	return cudaSuccess;
 }
 cudaError_t Render::delete_render() {
 	cudaFree(bodies_pos);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(bodies_rgb);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(bodies_rad);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(inner_ratios);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(outer_ratios);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(transl_ratios);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(mass);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(event_horizon);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(ref_idx);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(origins);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(directions);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(rgb);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(active);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(last_bounce);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 	cudaFree(shuffled);
-	if (cudaGetLastError() != cudaSuccess) return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) return cudaPeekAtLastError();
 
 	return cudaSuccess;
 }

@@ -135,12 +135,9 @@ cudaError_t NBody::makeNBody(NBody*& nb, std::vector<Body>& v, double r) {
 	if (err != cudaSuccess) return err;
 
 	updateAccel << <1, 1 >> > (nb->n, nb->g, nb->x, nb->y, nb->z, nb->axn, nb->ayn, nb->azn, nb->m, nb->inbounds, 1); //populate the initial acceleration arrays, "ease in" with larger softening
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
-	}
 	cudaDeviceSynchronize();
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 
 	return cudaSuccess;
@@ -204,67 +201,46 @@ cudaError_t NBody::destroyNBody(NBody* nb)
 //full verlet integration step, will return error code if something goes wrong
 cudaError_t NBody::step(double deltat, size_t nblocks, int tpb, int device) {
 	cudaSetDevice(device);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	tickp<<<nblocks, tpb>>>(n, deltat, x, xt, vx, axn, inbounds, radius);
-	if(cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
-	}
 	cudaDeviceSynchronize();
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	tickp<<<nblocks, tpb>>>(n, deltat, y, yt, vy, ayn, inbounds, radius);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
-	}
 	cudaDeviceSynchronize();
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	tickp<<<nblocks, tpb>>>(n, deltat, z, zt, vz, azn, inbounds, radius);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
-	}
 	cudaDeviceSynchronize();
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	swap(axo, axn); //prep the acceleration arrays for update by shuffling addresses
 	swap(ayo, ayn);
 	swap(azo, azn);
 	updateAccel<<<nblocks, tpb>>>(this->n, this->g, this->x, this->y, this->z, this->axn, this->ayn, this->azn, this->m, this->inbounds, this->softening);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
-	}
 	cudaDeviceSynchronize();
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	tickv<<<nblocks, tpb>>>(n, deltat, vx, vxt, axo, axn, inbounds);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
-	}
 	cudaDeviceSynchronize();
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	tickv<<<nblocks, tpb>>>(n, deltat, vy, vyt, ayo, ayn, inbounds);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
-	}
 	cudaDeviceSynchronize();
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	tickv<<<nblocks, tpb>>>(n, deltat, vz, vzt, azo, azn, inbounds);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
-	}
 	cudaDeviceSynchronize();
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 
 	return cudaSuccess;
@@ -272,31 +248,31 @@ cudaError_t NBody::step(double deltat, size_t nblocks, int tpb, int device) {
 }
 cudaError_t  NBody::getPos(double* x, double* y, double* z) {
 	cudaMemcpy(x, this->x, n * sizeof(double), cudaMemcpyDeviceToHost);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	cudaMemcpy(y, this->y, n * sizeof(double), cudaMemcpyDeviceToHost);
-	if (cudaGetLastError() - cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() - cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	cudaMemcpy(z, this->z, n * sizeof(double), cudaMemcpyDeviceToHost);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	return cudaSuccess;
 }
 cudaError_t  NBody::getVel(double* vx, double* vy, double* vz) {
 	cudaMemcpy(vx, this->vx, n * sizeof(double), cudaMemcpyDeviceToHost);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	cudaMemcpy(vy, this->vy, n * sizeof(double), cudaMemcpyDeviceToHost);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	cudaMemcpy(vz, this->vz, n * sizeof(double), cudaMemcpyDeviceToHost);
-	if (cudaGetLastError() != cudaSuccess) {
-		return cudaGetLastError();
+	if (cudaPeekAtLastError() != cudaSuccess) {
+		return cudaPeekAtLastError();
 	}
 	return cudaSuccess;
 }
